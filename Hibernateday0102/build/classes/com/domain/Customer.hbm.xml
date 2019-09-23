@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+ <!--配置实体和表的关系name：完整类名，table：表名  -->
+ <class name="com.domain.Customer" table="cst_customer">
+ <!--主键生成策略  -->
+ 	<id name="cust_id" column="cust_id">
+ 		<generator class="native"></generator>
+ 	</id>
+ 	<!--建立类中属性和普通键的映射-->
+ 	<property name="cust_name" column="cust_name"></property>
+ 	<property name="cust_source" column="cust_source"></property>
+ 	<property name="cust_industry" column="cust_industry"></property>
+ 	<property name="cust_level" column="cust_level"></property>
+ 	<property name="cust_phone" column="cust_phone"></property>
+ 	<property name="cust_linkman" column="cust_linkman"></property>
+ 	<property name="cust_mobile" column="cust_mobile"></property>
+ </class>
+ </hibernate-mapping>

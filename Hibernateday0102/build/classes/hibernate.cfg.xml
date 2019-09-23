@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+		<!-- #hibernate.connection.driver_class com.mysql.jdbc.Driver
+	#hibernate.connection.url jdbc:mysql:///test
+	#hibernate.connection.username gavin
+	#hibernate.connection.password	 -->
+	<session-factory>
+		<!--用来实现数据库的连接配置  -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql:///hibernate_day01</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password"></property>
+	
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="#hibernate.hbm2ddl.auto">update</property>
+		
+		<!--防止并发发生问题，设置事务的隔离级别为4  -->
+		<property name="#hibernate.connection.isolation">4</property>
+		<!--配置session绑定本地线程  -->
+		<property name="hibernate.current_session_context_class">thread</property>
+		
+		
+		<!--加载配置资源  -->
+		<mapping resource="com/domain/Customer.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>
